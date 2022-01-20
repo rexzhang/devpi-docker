@@ -7,7 +7,8 @@ FROM python:3.10-slim
 
 COPY . /app
 
-RUN pip install --no-cache-dir -r /app/requirements.txt \
+RUN apt-get update && apt-get install gcc python3-dev \
+    && pip install --no-cache-dir -r /app/requirements.txt \
     && mkdir /data
 
 WORKDIR /app
