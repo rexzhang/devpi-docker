@@ -7,7 +7,7 @@ PyPI mirror in self-host docker container
 ```shell
 docker pull ray1ex/devpi:latest
 docker run -dit -p 0.0.0.0:3141:3141 -v /your/path:/data \
-  --name devpi-server ray1ex/devpi-server
+  --name devpi ray1ex/devpi
 ```
 
 ## Config pip
