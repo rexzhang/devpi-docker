@@ -1,8 +1,8 @@
 FROM python:3.10-slim
 
 ## ---------- for develop
-RUN pip config set global.index-url http://192.168.200.21:3141/root/pypi/+simple \
-    && pip config set install.trusted-host 192.168.200.21
+#RUN pip config set global.index-url http://192.168.200.21:3141/root/pypi/+simple \
+#    && pip config set install.trusted-host 192.168.200.21
 ## ----------
 
 COPY . /app
