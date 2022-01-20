@@ -7,7 +7,7 @@ FROM python:3.10-slim
 
 COPY . /app
 
-RUN apt-get update && apt-get install -y gcc python3-dev \
+RUN apt-get update && apt-get install -y python3-cffi \
     && pip install --no-cache-dir -r /app/requirements.txt \
     && mkdir /data
 
