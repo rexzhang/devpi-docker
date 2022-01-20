@@ -7,7 +7,8 @@ FROM python:3.10-slim
 
 COPY . /app
 
-RUN apt-get update && apt-get install -y python3-cffi \
+RUN apt-get update && \
+    apt-get install -y python3-cffi python3-cffi-backend python3-argon2 python3-ruamel.yaml python3-aiohttp\
     && pip install --no-cache-dir -r /app/requirements.txt \
     && mkdir /data
 
