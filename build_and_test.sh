@@ -1,11 +1,11 @@
-docker container stop devpi-server
-docker container rm devpi-server
-docker image rm devpi-server
+docker container stop devpi
+docker container rm devpi
+docker image rm devpi
 
 docker pull python:3.10-alpine
-docker build -t ray1ex/devpi-server .
+docker build -t ray1ex/devpi .
 
 mkdir /tmp/data
 docker run -dit -p 0.0.0.0:3141:3141 -v /tmp/data:/data -e PYPI_URL=https://pypi.tuna.tsinghua.edu.cn/simple/ \
-  --name devpi-server ray1ex/devpi-server
-docker container logs -f devpi-server
+  --name devpi ray1ex/devpi
+docker container logs -f devpi
