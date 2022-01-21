@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # init
 if [ ! -f "/data/.serverversion" ];
@@ -10,7 +10,7 @@ fi
 echo "Start supervisor"
 supervisord -c /app/supervisord.conf
 
-echo "Sleeping $WAIT_TIME seconds..."
+echo "Wait supervisor $WAIT_TIME seconds..."
 sleep $WAIT_TIME
 
 echo "Config PyPI"

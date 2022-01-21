@@ -2,7 +2,7 @@ docker container stop devpi-server
 docker container rm devpi-server
 docker image rm devpi-server
 
-docker pull python:3.10-slim
+docker pull python:3.10-alpine
 docker build -t ray1ex/devpi-server .
 
 mkdir /tmp/data
