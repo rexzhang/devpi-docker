@@ -32,7 +32,9 @@ pip install devpi-client
 
 # Environment Variables
 
-| Name      | Defaule Value               | Memo |
-|-----------|-----------------------------|------|
-| PYPI_URL  | `https://pypi.org/simple/`  | -    |
-| WAIT_TIME | 30                          | -    |
+| Name      | Defaule Value              | Memo |
+|-----------|----------------------------|------|
+| GID       | 1000                       | -    |
+| UID       | 1000                       | -    |
+| PYPI_URL  | `https://pypi.org/simple/` | -    |
+| WAIT_TIME | 30                         | -    |
