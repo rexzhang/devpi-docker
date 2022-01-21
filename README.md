@@ -10,10 +10,19 @@ docker run -dit -p 0.0.0.0:3141:3141 -v /your/path:/data \
   --name devpi ray1ex/devpi
 ```
 
-## Config pip
+## Usage
+
+### Temporary
+```shell
+pip install -i http://localhost:3141/root/pypi/+simple/ devpi-client
+```
+
+### Persistent
 ```shell
 pip config set global.index-url http://localhost:3141/root/pypi/+simple/
 pip config set install.trusted-host http://localhost:3141/root/pypi/+simple/
+
+pip install devpi-client
 ```
 
 # Environment Variables
