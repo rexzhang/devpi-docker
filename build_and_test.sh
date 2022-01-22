@@ -3,7 +3,7 @@ docker container rm devpi
 docker image rm devpi
 
 docker pull python:3.10-alpine
-docker build -t ray1ex/devpi .
+docker build -t ray1ex/devpi . docker build -t ray1ex/devpi .
 
 mkdir /tmp/data
 docker run -dit -p 0.0.0.0:3141:3141 -v /tmp/data:/data \

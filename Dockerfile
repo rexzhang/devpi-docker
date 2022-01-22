@@ -1,10 +1,12 @@
 FROM python:3.10-alpine
 
-# for dev ----------
-RUN pip config set global.index-url http://192.168.200.21:3141/root/pypi/+simple
-RUN pip config set install.trusted-host 192.168.200.21
-RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.tuna.tsinghua.edu.cn/g' /etc/apk/repositories
-# ----------
+ARG ENV
+
+RUN if [ "$ENV" = "rex" ]; then \
+    && pip config set global.index-url http://192.168.200.21:3141/root/pypi/+simple \
+    && pip config set install.trusted-host 192.168.200.21 \
+    && sed -i 's/dl-cdn.alpinelinux.org/mirrors.tuna.tsinghua.edu.cn/g' /etc/apk/repositories \
+    ; fi
 
 ENV UID=1000
 ENV GID=1000
