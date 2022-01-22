@@ -2,7 +2,7 @@ FROM python:3.10-alpine
 
 ARG ENV
 
-RUN if [ "$ENV" = "rex" ]; then \
+RUN if [ "$ENV" = "rex" ]; then echo "Change depends" \
     && pip config set global.index-url http://192.168.200.21:3141/root/pypi/+simple \
     && pip config set install.trusted-host 192.168.200.21 \
     && sed -i 's/dl-cdn.alpinelinux.org/mirrors.tuna.tsinghua.edu.cn/g' /etc/apk/repositories \
