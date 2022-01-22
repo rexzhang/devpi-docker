@@ -1,14 +1,28 @@
 #!/bin/sh
 
-# init
+## run on non-root user
+usermod -o -u "$UID" devpi
+groupmod -o -g "$GID" devpi
+
+echo "
+------------------------
+User uid: $(id -u devpi)
+User gid: $(id -g devpi)
+------------------------
+"
+
+# devpi-init
 if [ ! -f "/data/.serverversion" ];
 then
   echo "Init devpi-server"
-  devpi-init --serverdir "/data"
+  devpi-init --serverdir /data
 fi
 
+chown -R devpi:devpi /data
+
+# devpi-server
 echo "Start supervisor"
-supervisord -c /app/supervisord.conf
+supervisord -u devpi -c /app/supervisord.conf
 
 echo "Wait supervisor $WAIT_TIME seconds..."
 sleep $WAIT_TIME

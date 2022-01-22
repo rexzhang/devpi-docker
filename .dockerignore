@@ -1,2 +1,3 @@
-.github/*
+.github
+venv
 build_and_test.sh
