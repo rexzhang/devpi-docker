@@ -1,6 +1,6 @@
 # devpi-docker
 
-[![Docker Pulls](https://img.shields.io/docker/pulls/ray1ex/devpi)](https://hub.docker.com/repository/docker/ray1ex/devpi)
+[![Docker Pulls](https://img.shields.io/docker/pulls/ray1ex/devpi)](https://hub.docker.com/r/ray1ex/devpi)
 
 PyPI local mirror/proxy/cache in self-host docker container
 
