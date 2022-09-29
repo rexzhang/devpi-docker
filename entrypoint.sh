@@ -19,6 +19,7 @@ then
 fi
 
 chown -R runner:runner /data
+chown -R runner:runner /nginx
 
 # devpi-server
 echo "Start supervisor"

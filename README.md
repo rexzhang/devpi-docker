@@ -27,7 +27,7 @@ pip install -i http://localhost:3141/root/pypi/+simple/ devpi-client
 pip config set global.index-url http://localhost:3141/root/pypi/+simple/
 pip config set install.trusted-host http://localhost:3141/root/pypi/+simple/
 
-pip install devpi-client
+pip install -U pip
 ```
 
 # Environment Variables
