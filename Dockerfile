@@ -29,7 +29,8 @@ RUN \
     && addgroup -S -g $GID runner \
     && adduser -S -D -G runner -u $UID runner \
     # prepare data path
-    && mkdir /data
+    && mkdir /data \
+    && chown runner.runner /data
 
 WORKDIR /app
 VOLUME /data

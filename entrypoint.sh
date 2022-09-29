@@ -18,15 +18,9 @@ then
   devpi-init --serverdir /data
 fi
 
-chown -R runner:runner /data
-
-# fix permission bug
-mkdir /data/+files
-chown -R runner:runner /data/+files
-
 # devpi-server
 echo "Start supervisor"
-supervisord -u runner -c /app/supervisord.conf
+supervisord -c /app/supervisord.conf
 
 echo "Wait supervisor $WAIT_TIME seconds..."
 sleep $WAIT_TIME
