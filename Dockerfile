@@ -12,7 +12,7 @@ ENV UID=1000
 ENV GID=1000
 
 ENV PYPI_URL="https://pypi.org/simple/"
-ENV WAIT_TIME=30
+ENV WAIT_TIME=10
 
 COPY . /app
 
@@ -22,10 +22,11 @@ RUN \
     && pip install --no-cache-dir -r /app/requirements.txt \
     && apk del .build-deps \
     && find /usr/local/lib/python*/ -type f -name '*.py[cod]' -delete \
+    && find /usr/local/lib/python*/ -type d -name "__pycache__" -delete \
     # create non-root user
     && apk add --no-cache shadow \
-    && addgroup -S -g $GID devpi \
-    && adduser -S -D -G devpi -u $UID devpi \
+    && addgroup -S -g $GID runner \
+    && adduser -S -D -G runner -u $UID runner \
     # prepare data path
     && mkdir /data
 

@@ -1,13 +1,13 @@
 #!/bin/sh
 
 ## run on non-root user
-usermod -o -u "$UID" devpi
-groupmod -o -g "$GID" devpi
+usermod -o -u "$UID" runner
+groupmod -o -g "$GID" runner
 
 echo "
 ------------------------
-User uid: $(id -u devpi)
-User gid: $(id -g devpi)
+User uid: $(id -u runner)
+User gid: $(id -g runner)
 ------------------------
 "
 
@@ -18,11 +18,11 @@ then
   devpi-init --serverdir /data
 fi
 
-chown -R devpi:devpi /data
+chown -R runner:runner /data
 
 # devpi-server
 echo "Start supervisor"
-supervisord -u devpi -c /app/supervisord.conf
+supervisord -u runner -c /app/supervisord.conf
 
 echo "Wait supervisor $WAIT_TIME seconds..."
 sleep $WAIT_TIME
