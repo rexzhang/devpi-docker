@@ -34,6 +34,14 @@ pip config set install.trusted-host http://localhost:3141/root/pypi/+simple/
 pip install -U pip
 ```
 
+### First Usage
+    
+    The first request will take a few seconds depending on internet speed, please wait some logging like below
+
+```
+2022-09-29 16:57:20,257 INFO  [Wtx1] fswriter2: committed at 2
+```
+
 # Environment Variables
 
 | Name      | Defaule Value              | Memo |
