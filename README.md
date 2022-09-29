@@ -11,15 +11,19 @@ PyPI local mirror/proxy/cache in self-host docker container
 ## Install
 ```shell
 docker pull ray1ex/devpi:latest
-docker run -dit -p 0.0.0.0:3141:3141 -v /your/path:/data \
-  --name devpi ray1ex/devpi
+docker run -dit --restart unless-stopped \
+    -p 3141:3141 \
+    -e UID=1000 -e GID=1000 \
+    -v /etc/localtime:/etc/localtime:ro \
+    -v /your/path:/data \
+    --name devpi ray1ex/devpi
 ```
 
 ## Usage
 
 ### Temporary
 ```shell
-pip install -i http://localhost:3141/root/pypi/+simple/ devpi-client
+pip install -i http://localhost:3141/root/pypi/+simple/ -U pip
 ```
 
 ### Persistent
@@ -37,4 +41,4 @@ pip install -U pip
 | GID       | 1000                       | -    |
 | UID       | 1000                       | -    |
 | PYPI_URL  | `https://pypi.org/simple/` | -    |
-| WAIT_TIME | 30                         | -    |
+| WAIT_TIME | 10                         | -    |
