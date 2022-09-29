@@ -49,4 +49,4 @@ pip install -U pip
 | GID       | 1000                       | -    |
 | UID       | 1000                       | -    |
 | PYPI_URL  | `https://pypi.org/simple/` | -    |
-| WAIT_TIME | 10                         | -    |
+| WAIT_TIME | 20                         | -    |
