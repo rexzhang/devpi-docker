@@ -14,7 +14,7 @@ docker pull ray1ex/devpi:latest
 docker run -dit --restart unless-stopped \
     -p 3141:3141 \
     -e UID=1000 -e GID=1000 \
-    -v /etc/localtime:/etc/localtime:ro \
+    -e TZ=Asia/Shanghai \
     -v /your/path:/data \
     --name devpi ray1ex/devpi
 ```
