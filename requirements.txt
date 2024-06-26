@@ -1,4 +1,4 @@
-devpi-server==6.11.0
+devpi-server==6.12.0
 devpi-client
 
 supervisor
